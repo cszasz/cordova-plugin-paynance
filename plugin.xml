@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-paynance" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-paynance" version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
   <name>PaynanceGateway</name>
 
+  <!-- JavaScript bridge -->
   <js-module src="www/PaynanceGateway.js" name="PaynanceGateway">
-    <clobbers target="PaynanceGateway" />
+    <clobbers target="cordova.plugins.PaynanceGateway" />
   </js-module>
 
   <platform name="android">
+    <!-- Required feature declaration -->
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="PaynanceGateway">
+        <param name="android-package" value="eatwithme.paynancegateway.PaynanceGateway" />
+        <param name="onload" value="false" />
+      </feature>
+    </config-file>
+
+    <!-- Native Java source -->
     <source-file src="src/android/java/PaynanceGateway.java" target-dir="src/eatwithme/paynancegateway" />
   </platform>
 </plugin>
