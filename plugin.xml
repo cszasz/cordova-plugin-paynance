@@ -7,6 +7,6 @@
   </js-module>
 
   <platform name="android">
-    <source-file src="src/android/PaynanceGateway.java" target-dir="src/com/example/paynancegateway" />
+    <source-file src="src/android/java/PaynanceGateway.java" target-dir="src/com/example/paynancegateway" />
   </platform>
 </plugin>
