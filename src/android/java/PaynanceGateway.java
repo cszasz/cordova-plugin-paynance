@@ -1,4 +1,4 @@
-package com.example.paynancegateway;
+package eatwithme.paynancegateway;
 
 import android.content.Intent;
 import android.net.Uri;
