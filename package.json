@@ -1,0 +1,18 @@
+{
+    "name": "cordova-plugin-paynance",
+    "version": "1.0.0",
+    "description": "Cordova plugin to launch Paynance payment intent",
+    "cordova": {
+      "id": "cordova-plugin-paynance",
+      "platforms": ["android"]
+    },
+    "keywords": [
+      "cordova",
+      "paynance",
+      "intent",
+      "payments"
+    ],
+    "author": "cszasz",
+    "license": "MIT"
+  }
+  
