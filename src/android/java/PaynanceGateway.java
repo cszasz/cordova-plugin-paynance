@@ -12,6 +12,15 @@ public class PaynanceGateway extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
+        if ("checkGateway".equals(action)) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("paynance://"));
+
+            PackageManager pm = context.getPackageManager();
+            List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+
+            return !resolveInfos.isEmpty(); // true if there is at least one app that can handle the intent
+        }
         if ("openGateway".equals(action)) {
             JSONObject params = args.getJSONObject(0);
 
